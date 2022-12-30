@@ -2,13 +2,15 @@
 import { prisma } from '../../../lib/prisma'
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-interface Product {
+
+export interface Product {
   id: number,
-  name: string,
+  name: string,  
   value: number,
 }
 
- async function handler(
+
+ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Product[]>
 ) {

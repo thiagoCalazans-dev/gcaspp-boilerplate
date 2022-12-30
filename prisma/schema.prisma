@@ -10,15 +10,24 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Product {
+model Supplier {
   id       Int        @id @default(autoincrement())
   name     String
-  value    Int
   Incoming Incoming[]
 }
 
+model Product {
+  id         Int      @id @default(autoincrement())
+  name       String
+  incomingId Int
+  incoming   Incoming @relation(fields: [incomingId], references: [id])
+  value      Int
+}
+
 model Incoming {
-  id        Int     @id @default(autoincrement())
-  product   Product @relation(fields: [productId], references: [id])
-  productId Int
+  id         Int       @id @default(autoincrement())
+  supplier   Supplier  @relation(fields: [supplierId], references: [id])
+  supplierId Int
+  Product    Product[]
+  value      Int
 }
