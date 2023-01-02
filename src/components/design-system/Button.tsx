@@ -9,7 +9,7 @@ export const Button = styled('button', {
   fontWeight: '$medium',
   fontFamily: '$default',
   textAlign: 'center',
-  minWidth: 120,
+  // minWidth: 120,
   boxSizing: 'border-box',
   padding: '0 $4',
 
@@ -60,7 +60,7 @@ export const Button = styled('button', {
           color: '$gray200',
           borderColor: '$gray200',
         },
-      },    
+      },
     },
 
     size: {
@@ -71,6 +71,10 @@ export const Button = styled('button', {
       md: {
         height: 46,
       },
+      icon: {
+        height: "auto",
+        padding: "$1"
+      }
     },
   },
 

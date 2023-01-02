@@ -1,12 +1,18 @@
 import { ComponentProps, ElementType } from 'react'
 import { styled } from '../../styles'
 
-export const Text = styled('p', {
+export const Description = styled('span', {
   fontFamily: 'sans-serif',
   lineHeight: '$base',
-  margin: 0,
   color: '$brand-700',
-  background: "transparent",
+  flex: 1,
+  padding: '$2 $4',
+  borderRadius: '$sm',
+  boxSizing: 'border-box',
+  border: '2px solid $gray9',
+  backgroundColor: '$gray2',
+  display: 'flex',
+  alignItems: 'baseline',
 
   variants: {
     size: {
@@ -26,13 +32,15 @@ export const Text = styled('p', {
     },
   },
 
+
+
   defaultVariants: {
     size: 'md',
   },
 })
 
-export interface TextProps extends ComponentProps<typeof Text> {
+export interface TextProps extends ComponentProps<typeof Description> {
   as?: ElementType
 }
 
-Text.displayName = 'Text'
+Description.displayName = 'Description'

@@ -7,13 +7,13 @@ export const TextInputContainer = styled('div', {
   padding: '$3 $4',
   borderRadius: '$sm',
   boxSizing: 'border-box',
-  border: '2px solid $brand-500',
+  border: '2px solid $brand-700',
   display: 'flex',
   alignItems: 'baseline',
-  flex: 1,
+
 
   '&:has(input:focus)': {
-    borderColor: '$brand-700',
+    borderColor: '$brand-500',
   },
 
   '&:has(input:disabled)': {
@@ -49,4 +49,24 @@ export const Input = styled('input', {
   '&:placeholder': {
     color: '$gray8',
   },
+  variants: {
+    size: {
+      auto: {
+        width: "auto"
+      },
+
+      "flex-full": {
+        flex: "1",
+      },
+      "id": {
+        justifyContent: "center",
+        width: "$7"
+      }
+    },
+  },
+
+  defaultVariants: {
+    size: "auto",
+  }
+
 })

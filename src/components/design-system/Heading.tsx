@@ -3,10 +3,11 @@ import { styled } from '../../styles'
 
 
 export const Heading = styled('h2', {
-  fontFamily: '$default',
+  fontFamily: 'system-ui',
   lineHeight: '$shorter',
   margin: 0,
-  color: '$gray12',
+  color: '$brand-700',
+  background: "transparent",
 
   variants: {
     size: {
