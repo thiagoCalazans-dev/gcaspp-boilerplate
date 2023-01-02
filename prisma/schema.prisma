@@ -14,6 +14,8 @@ model Supplier {
   id       Int        @id @default(autoincrement())
   name     String
   Incoming Incoming[]
+
+  @@map("suppliers")
 }
 
 model Product {
@@ -22,6 +24,8 @@ model Product {
   incomingId Int
   incoming   Incoming @relation(fields: [incomingId], references: [id])
   value      Int
+
+  @@map("products")
 }
 
 model Incoming {
@@ -30,4 +34,6 @@ model Incoming {
   supplierId Int
   Product    Product[]
   value      Int
+
+  @@map("incomings")
 }

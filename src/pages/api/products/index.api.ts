@@ -5,16 +5,16 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 
 export interface Product {
   id: number,
-  name: string,  
+  name: string,
   value: number,
 }
 
 
- export default async function handler(
+export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Product[]>
 ) {
-  const  result = await prisma.product.findMany()
+  const result = await prisma.product.findMany()
 
   res.status(200).json(result)
 }
